@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+
+jwt:
+  # This key is 64 characters long (512 bits) - secure for HS256
+  secret: myVeryLongSecretKeyThatIsAtLeast256BitsLongForJWTSecurity123456789
+  expiration: 86400000 # 24 hours in milliseconds
+
+logging:
+  level:
+    com.example: DEBUG

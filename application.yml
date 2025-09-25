@@ -12,11 +12,22 @@ spring:
   h2:
     console:
       enabled: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+      enabled: true
 
 jwt:
   # This key is 64 characters long (512 bits) - secure for HS256
   secret: myVeryLongSecretKeyThatIsAtLeast256BitsLongForJWTSecurity123456789
   expiration: 86400000 # 24 hours in milliseconds
+
+# File upload configuration
+file:
+  upload-dir: src/main/resources/static/images
+  max-size: 10485760 # 10MB in bytes
+  allowed-types: jpg,jpeg,png,gif,pdf,txt,doc,docx
 
 logging:
   level:
